@@ -14,36 +14,6 @@ def local_css(file_name):
 # Load the CSS file
 local_css("styles.css")
 # Add the blurred background
-st.markdown(
-    """
-    <style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    .blur-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        background-image: url('background.jpg'); /* Ensure the file path is correct */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        filter: blur(8px); /* Adjust the blur intensity */
-        opacity: 0.8; /* Optional: Adjust transparency */
-    }
-    </style>
-    <div class="blur-background"></div>
-    """,
-    unsafe_allow_html=True,
-)
-
-
-
-st.image("background.jpg", caption="Background Test")
 
 # Add the background div
 st.markdown(
