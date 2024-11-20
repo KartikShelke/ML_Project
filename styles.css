@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-   background-image: url('/app/background.jpg'); /* Streamlit should resolve this */
+   background-image: url('https://media.licdn.com/dms/image/D4D12AQE5tMSbHzL5Yw/article-cover_image-shrink_600_2000/0/1686909157848?e=2147483647&v=beta&t=QAErDuhf8HDQ3ojR9z9ajoGCCf3hpiF4wS-dQrsEc3Q'); /* Streamlit should resolve this */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
