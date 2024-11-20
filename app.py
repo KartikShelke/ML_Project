@@ -13,6 +13,8 @@ def local_css(file_name):
 
 # Load the CSS file
 local_css("styles.css")
+st.write("CSS Loaded")  # Debugging confirmation
+
 
 # Add the background div
 st.markdown('<div class="blur-background"></div>', unsafe_allow_html=True)
