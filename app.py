@@ -17,24 +17,30 @@ local_css("styles.css")
 st.markdown(
     """
     <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
     .blur-background {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         z-index: -1;
-        background-image: url('background.jpg'); /* Ensure this matches your filename */
+        background-image: url('background.jpg'); /* Ensure the file path is correct */
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        filter: blur(8px); /* Adjust blur intensity as needed */
+        filter: blur(8px); /* Adjust the blur intensity */
+        opacity: 0.8; /* Optional: Adjust transparency */
     }
     </style>
     <div class="blur-background"></div>
     """,
     unsafe_allow_html=True,
 )
+
 
 
 st.image("background.jpg", caption="Background Test")
