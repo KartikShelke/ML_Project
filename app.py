@@ -15,6 +15,7 @@ def local_css(file_name):
 local_css("styles.css")
 
 
+st.image("background.jpg", caption="Background Test")
 
 # Add the background div
 st.markdown(
