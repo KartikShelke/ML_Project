@@ -18,7 +18,7 @@ st.markdown(
         width: 100%;
         height: 100%;
         z-index: -1;
-        background-image: url('https://www.linkedin.com/pulse/credit-cards-ml-risks-methods-girish-mallya-cams-came');
+        background-image: url('background.jpg'); /* Use local image */
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
