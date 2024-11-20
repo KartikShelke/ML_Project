@@ -10,22 +10,28 @@ model = pickle.load(open('model.pkl', 'rb'))
 st.markdown(
     """
     <style>
-    /* Apply the background image */
-    .stApp {
+    /* Background container with blur */
+    .blur-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
         background-image: url('https://www.linkedin.com/pulse/credit-cards-ml-risks-methods-girish-mallya-cams-came');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        filter: blur(8px); /* Blurring the background */
-        -webkit-backdrop-filter: blur(8px); /* For Safari support */
+        filter: blur(8px); /* Apply blur only to the image */
     }
     /* Center the content with a semi-transparent background */
     .main-content {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
         padding: 20px;
         margin: auto;
         width: 60%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
     .stTitle {
         color: #333;
@@ -43,6 +49,7 @@ st.markdown(
         }
     }
     </style>
+    <div class="blur-background"></div>
     """,
     unsafe_allow_html=True,
 )
