@@ -9,17 +9,17 @@ model = pickle.load(open('model.pkl', 'rb'))
 # Streamlit App
 st.title("Credit Default Prediction")
 
-# Add background image using CSS
+# Add CSS to include the background image
 st.markdown(
     """
     <style>
-    .stApp {
-        background-image: url('https://media.licdn.com/dms/image/D4D12AQE5tMSbHzL5Yw/article-cover_image-shrink_600_2000/0/1686909157848?e=2147483647&v=beta&t=QAErDuhf8HDQ3ojR9z9ajoGCCf3hpiF4wS-dQrsEc3Q');
-        background-size: cover;
+    .reportview-container {
+        background: url("https://media.licdn.com/dms/image/D4D12AQE5tMSbHzL5Yw/article-cover_image-shrink_600_2000/0/1686909157848?e=2147483647&v=beta&t=QAErDuhf8HDQ3ojR9z9ajoGCCf3hpiF4wS-dQrsEc3Q")
+            no-repeat center / cover;
     }
     </style>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 # Inputs from user
@@ -38,7 +38,7 @@ input_data = pd.DataFrame([[income, age, loan, loan_to_income]], columns=['Incom
 if st.button("Predict Default"):
     # Make the prediction
     prediction = model.predict(input_data)
-
+    
     # Output
     if prediction == 0:
         st.write("Prediction: **No Default**")
