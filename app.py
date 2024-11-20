@@ -6,53 +6,16 @@ import numpy as np
 # Load the trained model (ensure 'model.pkl' is in the same directory or provide the full path)
 model = pickle.load(open('model.pkl', 'rb'))
 
-# Custom CSS for styling
-st.markdown(
-    """
-    <style>
-    /* Background container with blur */
-    .blur-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-image: url('background.jpg'); /* Use local image */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        filter: blur(8px); /* Apply blur only to the image */
-    }
-    /* Center the content with a semi-transparent background */
-    .main-content {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        padding: 20px;
-        margin: auto;
-        width: 60%;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .stTitle {
-        color: #333;
-        text-align: center;
-        font-family: 'Arial', sans-serif;
-        animation: fadeIn 2s ease-in-out;
-    }
-    /* Adding simple animation */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    </style>
-    <div class="blur-background"></div>
-    """,
-    unsafe_allow_html=True,
-)
+# Load external CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Load the CSS file
+local_css("styles.css")
+
+# Add the background div
+st.markdown('<div class="blur-background"></div>', unsafe_allow_html=True)
 
 # Streamlit App
 st.markdown('<div class="main-content">', unsafe_allow_html=True)
